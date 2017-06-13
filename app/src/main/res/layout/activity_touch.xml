@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="leon.training.MainActivity">
+
+    <leon.training.touch.TouchAView
+        android:layout_width="400dip"
+        android:layout_height="400dip">
+
+        <leon.training.touch.TouchBView
+            android:layout_width="200dip"
+            android:layout_height="200dip">
+
+            <leon.training.touch.TouchCView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#FF4444" />
+
+            <leon.training.touch.TouchCView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#00ff00" />
+
+            <leon.training.touch.TouchCView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#ff0000" />
+
+            <leon.training.touch.TouchCView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#0000ff" />
+        </leon.training.touch.TouchBView>
+    </leon.training.touch.TouchAView>
+</RelativeLayout>

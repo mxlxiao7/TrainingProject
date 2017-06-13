@@ -1,0 +1,10 @@
+println('---------------------------settings.gradle start---------------------------------');
+
+include ':app', ':lib_java', ':lib_android'
+
+
+
+
+
+
+println('---------------------------settings.gradle end-----------------------------------');

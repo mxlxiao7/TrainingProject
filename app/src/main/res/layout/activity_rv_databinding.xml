@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><!--布局以layout作为根布局-->
+<layout>
+    <!--我们需要展示的布局-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/change"
+            style="@style/btn.style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:text="切换数据"
+            android:textSize="16sp" />
+
+        <!--通过命名空间将写有toolbar的xml文件中定义的content对象作为属性绑定con对象，这2个对象是同一个类-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

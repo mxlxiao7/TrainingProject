@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Interview</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="sort_time" format="true">数组生成时间: %1$s ms ，数组排序时间: %2$s ms </string>
+    <string name="other_name">别名</string>
+</resources>

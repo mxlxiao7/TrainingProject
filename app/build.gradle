@@ -1,0 +1,99 @@
+println('---------------------------app.gradle start---------------------------------');
+//apply from: rootProject.rootDir.getAbsolutePath() + "/utils.gradle";
+//apply from: rootProject.rootDir.getAbsolutePath() + "/utils1.gradle";
+apply plugin: 'com.android.application'
+//apply plugin: 'groovyx.android'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        applicationId "leon.trainingproject"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        jackOptions {
+            enabled false
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+
+    }
+
+    productFlavors {
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    dataBinding {
+        enabled = true;
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //    compile "org.codehaus.groovy:groovy:2.4.7:grooid"
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'com.squareup.okhttp3:okhttp-android-support:3.8.0'
+    //内存检测
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:retrofit-converters:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+
+//    compile gradleApi()
+//    compile 'com.android.tools.build:gradle:2.3.2'
+
+}
+
+/**
+ * 设置编译字符串类型
+ */
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+/**
+ *  复制
+ */
+//project.copy {
+//    logger.log(LogLevel.ERROR, "project.copy");
+//    into gradle.ext.testDir;
+//    exclude '**/.svn/**';
+//    from(rootDir.getAbsolutePath() + '/app/libs') {
+//        include '**/*.jar'
+//    }
+//}
+
+/**
+ *  删除
+ */
+//project.delete {
+//    logger.log(LogLevel.ERROR, "project.delete");
+//    delete rootDir.getAbsolutePath() + "/test1.jar", rootDir.getAbsolutePath() + "/test2.jar";
+//    followSymlinks = true;
+//}
+
+
+println('---------------------------app.gradle end-----------------------------------');

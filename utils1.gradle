@@ -1,0 +1,12 @@
+println('---------------------------utils1.gradle start---------------------------------');
+
+gradle.afterProject {
+    println("gradle.afterProject");
+
+}
+
+
+
+
+println('---------------------------utils1.gradle end-----------------------------------');
+

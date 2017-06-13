@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="mUser"
+            type="leon.training.databinding.User" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user2"
+            type="mUser" />
+
+        <variable
+            name="user"
+            type="leon.training.databinding.User" />
+
+        <variable
+            name="person"
+            type="leon.training.databinding.Person" />
+
+        <variable
+            name="tagContent"
+            type="String" />
+
+        <variable
+            name="tagClick"
+            type="Boolean" />
+
+        <variable
+            name="demoClick"
+            type="leon.training.databinding.EventCallback" />
+
+        <variable
+            name="strArrays"
+            type="String[]" />
+
+        <!--泛型的支持会在编译时期报红线，是可以直接运行的,但是需要通过转义字符才行，如：\<数据类型> 或者\<数据类型\>-->
+        <variable
+            name="list"
+            type="java.util.List&lt;String&gt;" />
+
+        <variable
+            name="map"
+            type="java.util.Map&lt;String,String&gt;" />
+
+        <!--Observable数据改变自动更新-->
+        <import type="leon.training.databinding.Animal" />
+
+        <variable
+            name="animal"
+            type="Animal" />
+
+        <variable
+            name="animalList"
+            type="android.databinding.ObservableArrayList&lt;String&gt;" />
+
+        <variable
+            name="animalMap"
+            type="android.databinding.ObservableArrayMap&lt;String,String&gt;" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="change"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="切换"
+                android:textSize="16sp" />
+
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@{user.getFullName(user.firstName,user.lastName)}"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@{String.valueOf(user.age)}"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@{user.phone}"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tag_TV"
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:clickable="@{tagClick}"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@{tagContent}"
+                android:textSize="16sp"
+                android:visibility="@{user.isShowTag ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="@{demoClick.click}"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="点击事件绑定"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@{`不同类`+ @string/other_name +` -- `+ user2.getFullName(user2.firstName,user2.lastName)}"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="@{demoClick::click2}"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="Model变量改变自动更新数据"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@{person.toString()}"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="@{demoClick::click3}"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="集合数据"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="String[] : "
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@{strArrays[0]}"
+                    android:textSize="14sp" />
+
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@{strArrays[1]}"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="List : "
+                    android:textSize="14sp" />
+
+                <!--List集合既可以和数组一样通过索引获取值list[index]方式，也可以调用API-->
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@{list[0]}"
+                    android:textSize="14sp" />
+
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@{list.get(1)}"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="Map : "
+                    android:textSize="14sp" />
+
+                <!--Map集合既可以通过map[key]的方式，也可以通过调用API-->
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@{map[`name`]}"
+                    android:textSize="14sp" />
+
+                <TextView
+                    style="@style/btn.style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@{map.get(`age`)}"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="@{demoClick::click4}"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="集合数据Observable自动更新"
+                android:textSize="16sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/btn.style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="Animal : "
+                        android:textSize="14sp" />
+
+                    <TextView
+                        style="@style/btn.style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="@{animal.field}"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        style="@style/btn.style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="@{String.valueOf(animal.age)}"
+                        android:textSize="14sp" />
+
+                    <!--List集合既可以和数组一样通过索引获取值list[index]方式，也可以调用API-->
+                    <TextView
+                        style="@style/btn.style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="@{animalList[0]}"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        style="@style/btn.style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="@{animalList.get(1)}"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        style="@style/btn.style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="@{animalMap[`name`]}"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        style="@style/btn.style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="@{animalMap.get(`age`)}"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                style="@style/btn.style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="@{demoClick::click5}"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="RecyclerView - 绑定"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

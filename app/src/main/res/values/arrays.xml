@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="item_list">
+        <item>Command 1</item>
+        <item>Command 2</item>
+        <item>Command 3</item>
+        <item>Command 4</item>
+        <item>Command 5</item>
+        <item>Command 6</item>
+        <item>Command 7</item>
+        <item>Command 8</item>
+        <item>Command 9</item>
+        <item>Command 10</item>
+        <item>Command 11</item>
+        <item>Command 12</item>
+        <item>Command 13</item>
+        <item>Command 14</item>
+        <item>Command 15</item>
+        <item>Command 16</item>
+    </string-array>
+</resources>

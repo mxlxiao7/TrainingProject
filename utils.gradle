@@ -1,0 +1,34 @@
+println('---------------------------utils.gradle start---------------------------------');
+
+//初始化外置属性
+def initExter() {
+    File path = new File(rootDir.getAbsolutePath(), "/local.properties");
+    Properties p = new Properties();
+    p.load(path.newInputStream());
+    gradle.ext.api = p.getProperty("api");
+    println("api = " + gradle.ext.api);
+
+    def String dir = p.getProperty("testDir");
+    gradle.ext.testDir = new File(rootDir, dir).getAbsolutePath();
+    println("testDir = " + gradle.ext.testDir);
+}
+
+initExter();
+
+//rootDir
+def String rDir = rootProject.getRootDir().getAbsolutePath();
+println("RootDir = " + rDir);
+
+def String rBuild = rootProject.getBuildDir().getAbsolutePath();
+println("BuildDir = " + rBuild);
+
+rootProject.beforeEvaluate {
+    println("rootProject.beforeEvaluate");
+}
+
+rootProject.afterEvaluate {
+    println("rootProject.afterEvaluate");
+}
+
+println('---------------------------utils.gradle end-----------------------------------');
+

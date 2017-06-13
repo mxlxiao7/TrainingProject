@@ -1,0 +1,22 @@
+println('---------------------------lib_java.gradle start---------------------------------');
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+
+/**
+ * 设置编译字符串类型
+ */
+//tasks.withType(JavaCompile) {
+//    options.encoding = "UTF-8"
+//}
+
+
+
+
+println('---------------------------lib_java.gradle end-----------------------------------');
