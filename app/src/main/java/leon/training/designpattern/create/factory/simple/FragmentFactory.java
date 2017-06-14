@@ -14,6 +14,7 @@ import leon.training.algorithm.SortShell;
 import leon.training.algorithm.sortfragment.SortFragment;
 import leon.training.broadcast.BroadCastFragment;
 import leon.training.databinding.DataBindingFragment;
+import leon.training.designpattern.behavior.templatemethod.TemplateMethodFragment;
 import leon.training.designpattern.structure.adapter.AdapterFragment;
 import leon.training.designpattern.structure.bridge.BridgeFragment;
 import leon.training.designpattern.create.builder.BuilderFragment;
@@ -70,6 +71,7 @@ public class FragmentFactory {
             "DP-Bridge",
             "DP-Component",
             "DP-Chain",
+            "DP-TemplateMethod",
             "View-Step",
             "View-DataBinding",
             "Net-Okhttp",
@@ -189,6 +191,9 @@ public class FragmentFactory {
                 break;
             case "DP-Dynamic_Proxy":
                 f = DynamicProxyFragment.newInstance();
+                break;
+            case "DP-TemplateMethod":
+                f = TemplateMethodFragment.newInstance();
                 break;
             default:
                 break;
