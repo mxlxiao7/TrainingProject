@@ -1,5 +1,7 @@
 package leon.training.algorithm;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import org.greenrobot.eventbus.EventBus;
@@ -19,5 +21,9 @@ public class Utils {
     public static void msg(String s) {
         Log.d("TLOG", s);
         EventBus.getDefault().post(s);
+    }
+
+    public static boolean isMainThread() {
+        return Looper.myLooper() == Looper.getMainLooper();
     }
 }

@@ -1,6 +1,7 @@
 package leon.training.rx;
 
 import android.os.Bundle;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -20,20 +21,24 @@ import org.reactivestreams.Subscription;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
+import io.reactivex.FlowableOperator;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
+import io.reactivex.internal.util.AppendOnlyLinkedArrayList;
 import io.reactivex.schedulers.Schedulers;
 import leon.training.BaseFragment;
 import leon.training.algorithm.Utils;
@@ -115,7 +120,9 @@ public class RxFragment extends BaseFragment {
                 Utils.msg("\n-------------------------10------------------------");
                 rx10();
                 Utils.msg("\n-------------------------11------------------------");
-                rx11();
+//                rx11();
+                Utils.msg("\n-------------------------12------------------------");
+                rx12();
             }
         });
         return rootView;
@@ -257,11 +264,27 @@ public class RxFragment extends BaseFragment {
                 });
     }
 
+    /******************************操作符start*************************************/
+
     /**
-     * 变换
+     *  map         变换
+     *  flatMap     变换生成新的Flowable
+     *  lift        不推荐使用，最好使用lift的包装方法map，flatMap
+     *  filter      过滤
+     *  take        取前几个数
+     *  range(a,b)  取从a开始数b个数
+     *  compose
+     *  concat
+     *  merge
+     *
+     */
+
+    /**
+     * 操作符: map变换
      */
     private void rx5() {
-        Flowable.just("map")
+        Flowable.just("1")
+                //这个第一个泛型为接收参数的数据类型，第二个泛型为转换后要发射的数据类型
                 .map(new Function<String, String>() {
                     @Override
                     public String apply(String s) throws Exception {
@@ -316,6 +339,15 @@ public class RxFragment extends BaseFragment {
 //                .subscribe(num -> Utils.msg(num.toString()));
 
         //from形式
+        Flowable.fromIterable(list)
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(@NonNull Integer integer) throws Exception {
+                        Utils.msg(integer.toString());
+                    }
+                });
+
+
 //        Flowable.just(list)
 //                .subscribe(nums -> {
 //                    Observable.fromIterable(nums).subscribe(num -> Utils.msg(num.toString()));
@@ -396,7 +428,7 @@ public class RxFragment extends BaseFragment {
                     }
                 });
     }
-
+    /******************************操作符end*************************************/
 
     /**
      * onComplete 和 onError 方法
@@ -443,6 +475,8 @@ public class RxFragment extends BaseFragment {
                 });
     }
 
+    /******************************线程调度start*************************************/
+
     /**
      * 调度器:
      * 在Android中写多线程不是一件容易的事，尤其是嵌套数据获取，比如要获取用的资料，其中有一项是头像，
@@ -456,9 +490,9 @@ public class RxFragment extends BaseFragment {
         Flowable.create(new FlowableOnSubscribe<String>() {
             @Override
             public void subscribe(FlowableEmitter<String> e) throws Exception {
-                e.onNext("将会在3秒后显示");
+                e.onNext("将会在3秒后显示  " + Utils.isMainThread());
                 SystemClock.sleep(3000);
-                e.onNext("RxJava你可以随意的切换线程");
+                e.onNext("RxJava你可以随意的切换线程" + Utils.isMainThread());
                 e.onComplete();
             }
         }, BackpressureStrategy.BUFFER)
@@ -467,12 +501,39 @@ public class RxFragment extends BaseFragment {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
+                        s += "    ";
+                        s += Utils.isMainThread();
                         Utils.msg(s);
-                        Toast.makeText(RxFragment.this.getActivity(), s, Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
+    /**
+     *
+     */
+    private void rx12() {
 
-
+        Flowable.create(new FlowableOnSubscribe<String>() {
+            @Override
+            public void subscribe(@NonNull FlowableEmitter<String> e) throws Exception {
+                Utils.msg("FlowableOnSubscribe - subscribe()    " + Utils.isMainThread());
+                e.onNext("");
+            }
+        }, BackpressureStrategy.BUFFER)
+                .subscribeOn(Schedulers.io())
+                .doOnSubscribe(new Consumer<Subscription>() {
+                    @Override
+                    public void accept(@NonNull Subscription subscription) throws Exception {
+                        Utils.msg("doOnSubscribe() - accept()   " + Utils.isMainThread());
+                    }
+                })
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(@NonNull String s) throws Exception {
+                        Utils.msg("subscribe() - accept()   " + Utils.isMainThread());
+                    }
+                });
+    }
 }
