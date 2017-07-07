@@ -26,11 +26,12 @@ import leon.training.designpattern.create.factory.abs.AbstractFactoryFragment;
 import leon.training.designpattern.create.factory.method.MethodFactoryFragment;
 import leon.training.designpattern.structure.proxy.ProxyFragment;
 import leon.training.designpattern.structure.proxy.dynamic.DynamicProxyFragment;
+import leon.training.function.init.StaticInitIndexFragment;
 import leon.training.groovy.GroovyFragment;
 import leon.training.lambda.LambdaFragment;
 import leon.training.launchmode.LaunchModeFragment;
 import leon.training.leaks.LeakFragment;
-import leon.training.memory.MemoryFragment;
+import leon.training.function.memory.MemoryFragment;
 import leon.training.network.NetworkFragment;
 import leon.training.rx.RxFragment;
 import leon.training.structure.StructureFragment;
@@ -78,7 +79,8 @@ public class FragmentFactory {
             "Fun-Leaks",
             "Launch-Mode",
             "Broad-Cast",
-            "Memory",
+            "Fun-Memory",
+            "Fun-StaticInitIndex",
     };
 
 
@@ -186,7 +188,7 @@ public class FragmentFactory {
             case "Broad-Cast":
                 f = BroadCastFragment.newInstance();
                 break;
-            case "Memory":
+            case "Fun-Memory":
                 f = MemoryFragment.newInstance();
                 break;
             case "DP-Dynamic_Proxy":
@@ -194,6 +196,9 @@ public class FragmentFactory {
                 break;
             case "DP-TemplateMethod":
                 f = TemplateMethodFragment.newInstance();
+                break;
+            case "Fun-StaticInitIndex":
+                f = StaticInitIndexFragment.newInstance();
                 break;
             default:
                 break;

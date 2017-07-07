@@ -1,11 +1,10 @@
-package leon.training.memory;
+package leon.training.function.memory;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,28 +12,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import leon.training.BaseFragment;
 import leon.training.algorithm.Utils;
-import leon.training.network.TRequest;
 import leon.trainingproject.R;
 import leon.trainingproject.databinding.FragmentMemoryLayoutBinding;
-import leon.trainingproject.databinding.FragmentNetworkLayoutBinding;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Author:maxiaolong
