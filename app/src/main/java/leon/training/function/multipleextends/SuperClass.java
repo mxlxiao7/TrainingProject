@@ -1,4 +1,4 @@
-package leon.training.function.init;
+package leon.training.function.multipleextends;
 
 import leon.training.algorithm.Utils;
 
@@ -6,14 +6,11 @@ import leon.training.algorithm.Utils;
  * Created by leon on 2017/7/7.
  */
 
-class SuperClass{
+class SuperClass implements Interface1{
 
-    public static int value = 123;
+    public static final int value = 3;
 
     static {
-
         Utils.msg("SuperClass init");
-
     }
-
 }

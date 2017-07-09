@@ -6,7 +6,7 @@ import leon.training.algorithm.Utils;
  * Created by leon on 2017/7/7.
  */
 
-public class Client {
+class Client {
 
     /**
      * 通过子类引用父类的静态字段，不会导致子类初始化
