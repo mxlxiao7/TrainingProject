@@ -28,6 +28,7 @@ import leon.training.designpattern.structure.proxy.ProxyFragment;
 import leon.training.designpattern.structure.proxy.dynamic.DynamicProxyFragment;
 import leon.training.function.init.StaticInitIndexFragment;
 import leon.training.function.multipleextends.MultipleExtendsFragment;
+import leon.training.function.volatiletest.VolatileFragment;
 import leon.training.groovy.GroovyFragment;
 import leon.training.lambda.LambdaFragment;
 import leon.training.launchmode.LaunchModeFragment;
@@ -83,6 +84,7 @@ public class FragmentFactory {
             "Fun-Memory",
             "Fun-StaticInitIndex",
             "Fun-MultipleExtends",
+            "Fun-Volatile",
     };
 
 
@@ -204,6 +206,9 @@ public class FragmentFactory {
                 break;
             case "Fun-MultipleExtends":
                 f = MultipleExtendsFragment.newInstance();
+                break;
+            case "Fun-Volatile":
+                f = VolatileFragment.newInstance();
                 break;
             default:
                 break;

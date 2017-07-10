@@ -1,4 +1,4 @@
-package leon.training.function.multipleextends;
+package leon.training.function.volatiletest;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,32 +12,32 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import leon.training.BaseFragment;
-import leon.training.designpattern.structure.proxy.ProxyFragment;
 import leon.trainingproject.R;
 
 /**
  * Created by leon on 2017/7/7.
  */
 
-public class MultipleExtendsFragment extends BaseFragment {
+public class VolatileFragment extends BaseFragment {
 
 
-    private static final String TAG = MultipleExtendsFragment.class.getSimpleName();
+    private static final String TAG = VolatileFragment.class.getSimpleName();
     private StringBuilder s = new StringBuilder();
     private Button mClearBtn;
     private TextView textView1;
     private TextView mMsg;
     private Button mBtn;
+    private Button mBtn1;
 
-    public MultipleExtendsFragment() {
+    public VolatileFragment() {
     }
 
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static MultipleExtendsFragment newInstance() {
-        MultipleExtendsFragment fragment = new MultipleExtendsFragment();
+    public static VolatileFragment newInstance() {
+        VolatileFragment fragment = new VolatileFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -55,7 +55,7 @@ public class MultipleExtendsFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_function_multipleextends_layout, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_function_volatile_layout, container, false);
         mMsg = (TextView) rootView.findViewById(R.id.tv_msg);
 
         mClearBtn = (Button) rootView.findViewById(R.id.clear);
@@ -64,6 +64,7 @@ public class MultipleExtendsFragment extends BaseFragment {
             public void onClick(View view) {
                 s.setLength(0);
                 helloEventBus("");
+                Client.reset();
             }
         });
 
@@ -72,6 +73,14 @@ public class MultipleExtendsFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 Client.m1();
+            }
+        });
+
+        mBtn1 = (Button) rootView.findViewById(R.id.btn1);
+        mBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Client.main();
             }
         });
         return rootView;
