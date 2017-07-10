@@ -24,7 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import leon.training.designpattern.create.factory.simple.FragmentFactory;
-import leon.training.touch.TouchActivity;
+import leon.training.function.touch.TouchActivity;
 import leon.trainingproject.R;
 
 import static leon.training.designpattern.create.factory.simple.FragmentFactory.TITLES;

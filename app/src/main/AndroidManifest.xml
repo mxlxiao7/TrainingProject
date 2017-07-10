@@ -28,25 +28,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="leon.training.touch.TouchActivity" />
+        <activity android:name="leon.training.function.touch.TouchActivity" />
 
         <activity android:name="leon.training.databinding.DataBindingActivity" />
 
         <activity android:name="leon.training.databinding.DataBindingListActivity" />
 
-        <activity android:name="leon.training.leaks.LeakActivity" />
+        <activity android:name="leon.training.function.leaks.LeakActivity" />
 
-        <activity android:name="leon.training.launchmode.Activity1" />
+        <activity android:name="leon.training.function.launchmode.Activity1" />
 
         <activity
-            android:name="leon.training.launchmode.Activity2"
+            android:name="leon.training.function.launchmode.Activity2"
             android:launchMode="singleInstance" />
 
-        <activity android:name="leon.training.launchmode.Activity3" />
+        <activity android:name="leon.training.function.launchmode.Activity3" />
 
 
         <receiver
-            android:name="leon.training.broadcast.DisableReceiver"
+            android:name="leon.training.function.broadcast.DisableReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="sta_action" />

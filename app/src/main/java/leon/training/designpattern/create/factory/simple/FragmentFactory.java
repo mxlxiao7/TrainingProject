@@ -12,7 +12,7 @@ import leon.training.algorithm.SortQuick;
 import leon.training.algorithm.SortSelection;
 import leon.training.algorithm.SortShell;
 import leon.training.algorithm.sortfragment.SortFragment;
-import leon.training.broadcast.BroadCastFragment;
+import leon.training.function.broadcast.BroadCastFragment;
 import leon.training.databinding.DataBindingFragment;
 import leon.training.designpattern.behavior.templatemethod.TemplateMethodFragment;
 import leon.training.designpattern.structure.adapter.AdapterFragment;
@@ -29,17 +29,17 @@ import leon.training.designpattern.structure.proxy.dynamic.DynamicProxyFragment;
 import leon.training.function.init.StaticInitIndexFragment;
 import leon.training.function.multipleextends.MultipleExtendsFragment;
 import leon.training.function.volatiletest.VolatileFragment;
-import leon.training.groovy.GroovyFragment;
-import leon.training.lambda.LambdaFragment;
-import leon.training.launchmode.LaunchModeFragment;
-import leon.training.leaks.LeakFragment;
+import leon.training.function.groovy.GroovyFragment;
+import leon.training.function.lambda.LambdaFragment;
+import leon.training.function.launchmode.LaunchModeFragment;
+import leon.training.function.leaks.LeakFragment;
 import leon.training.function.memory.MemoryFragment;
-import leon.training.network.NetworkFragment;
-import leon.training.rx.RxFragment;
-import leon.training.structure.StructureFragment;
+import leon.training.function.network.NetworkFragment;
+import leon.training.function.rx.RxFragment;
+import leon.training.datastructure.StructureFragment;
 import leon.training.thread.ThreadFragment;
-import leon.training.trycatch.TryCatchFragment;
-import leon.training.view.ViewFragment;
+import leon.training.function.trycatch.TryCatchFragment;
+import leon.training.function.view.ViewFragment;
 
 /**
  * Created by maxiaolong on 2017/4/19.
