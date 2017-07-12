@@ -25,10 +25,14 @@ public class MultiThreadFragment extends BaseFragment {
 
     private static final String TAG = AdapterFragment.class.getSimpleName();
     private StringBuilder s = new StringBuilder();
-    private Button mClearBtn;
+    private TextView mClearBtn;
     private TextView textView1;
     private TextView mMsg;
-    private Button mBtn;
+    private TextView mBtn0;
+    private TextView mBtn1;
+    private TextView mBtn2;
+    private TextView mBtn3;
+    private TextView mBtn4;
 
     public MultiThreadFragment() {
 
@@ -58,7 +62,7 @@ public class MultiThreadFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_multi_thread_layout, container, false);
         mMsg = (TextView) rootView.findViewById(R.id.tv_msg);
-        mClearBtn = (Button) rootView.findViewById(R.id.clear);
+        mClearBtn = (TextView) rootView.findViewById(R.id.clear);
         mClearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,16 +71,45 @@ public class MultiThreadFragment extends BaseFragment {
             }
         });
 
-        mBtn = (Button) rootView.findViewById(R.id.btn);
-        mBtn.setOnClickListener(new View.OnClickListener() {
+        mBtn0 = (TextView) rootView.findViewById(R.id.btn0);
+        mBtn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Client.main();
             }
         });
 
+        mBtn1 = (TextView) rootView.findViewById(R.id.btn1);
+        mBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Client.main();
+            }
+        });
 
+        mBtn2 = (TextView) rootView.findViewById(R.id.btn2);
+        mBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Client.main();
+            }
+        });
 
+        mBtn3 = (TextView) rootView.findViewById(R.id.btn3);
+        mBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Client.main();
+            }
+        });
+
+        mBtn4 = (TextView) rootView.findViewById(R.id.btn4);
+        mBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Client.m1();
+            }
+        });
 
 
         return rootView;

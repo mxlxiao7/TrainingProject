@@ -18,30 +18,35 @@
             android:layout_width="match_parent"
             android:layout_height="55dp">
 
-            <Button
+            <TextView
                 android:id="@+id/clear"
                 style="@style/btn.style"
                 android:text="清除" />
 
-            <Button
-                android:id="@+id/btn"
+            <TextView
+                android:id="@+id/btn0"
                 style="@style/btn.style"
                 android:text="CachedThreadPool" />
 
-            <Button
-                android:id="@+id/btn"
+            <TextView
+                android:id="@+id/btn1"
                 style="@style/btn.style"
                 android:text="FixedThreadPool" />
 
-            <Button
-                android:id="@+id/btn"
+            <TextView
+                android:id="@+id/btn2"
                 style="@style/btn.style"
                 android:text="ScheduledThreadPool" />
 
-            <Button
-                android:id="@+id/btn"
+            <TextView
+                android:id="@+id/btn3"
                 style="@style/btn.style"
                 android:text="SingleThreadExecutor" />
+
+            <TextView
+                android:id="@+id/btn4"
+                style="@style/btn.style"
+                android:text="Fork/Join" />
 
         </LinearLayout>
     </HorizontalScrollView>

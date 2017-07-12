@@ -40,6 +40,8 @@ public class SortFragment extends BaseFragment implements View.OnClickListener {
     private Strategy mStrategy;
     private TextView mSectionArrayTV;
 
+    private int mNum = 10;
+
     /**
      * Returns a new instance of this fragment for the given section
      * number.
@@ -112,7 +114,6 @@ public class SortFragment extends BaseFragment implements View.OnClickListener {
         }
     }
 
-    int mNum = 10;
 
     /**
      *
@@ -131,8 +132,7 @@ public class SortFragment extends BaseFragment implements View.OnClickListener {
 
         final long end1 = System.currentTimeMillis() - s1;
 
-
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 mTextTV.setText(getString(R.string.sort_time, new Object[]{end, end1}));

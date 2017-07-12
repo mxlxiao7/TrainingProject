@@ -7,5 +7,5 @@
     <dimen name="btn_w">65dip</dimen>
     <dimen name="btn_h">32dip</dimen>
     <dimen name="btn_margin_t_b">3dip</dimen>
-    <dimen name="btn_margin_l_r">5dip</dimen>
+    <dimen name="btn_margin_l_r">8dip</dimen>
 </resources>

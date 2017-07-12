@@ -40,6 +40,7 @@ import leon.training.datastructure.StructureFragment;
 import leon.training.thread.ThreadFragment;
 import leon.training.function.trycatch.TryCatchFragment;
 import leon.training.function.view.ViewFragment;
+import leon.training.thread.multithread.MultiThreadFragment;
 
 /**
  * Created by maxiaolong on 2017/4/19.
@@ -58,6 +59,7 @@ public class FragmentFactory {
             "Sort-SortQuick",
             "Groovy",
             "Thread",
+            "MultiThread",
             "Rx",
             "Lambda",
             "Decorator",
@@ -128,6 +130,9 @@ public class FragmentFactory {
                 break;
             case "Thread":
                 f = ThreadFragment.newInstance();
+                break;
+            case "MultiThread":
+                f = MultiThreadFragment.newInstance();
                 break;
             case "Rx":
                 f = RxFragment.newInstance();
