@@ -37,6 +37,8 @@ import leon.training.function.memory.MemoryFragment;
 import leon.training.function.network.NetworkFragment;
 import leon.training.function.rx.RxFragment;
 import leon.training.datastructure.StructureFragment;
+import leon.training.ndk.NDKFragment;
+import leon.training.ndk.splistmerge.SplitsMergeFragment;
 import leon.training.thread.ThreadFragment;
 import leon.training.function.trycatch.TryCatchFragment;
 import leon.training.function.view.ViewFragment;
@@ -87,6 +89,8 @@ public class FragmentFactory {
             "Fun-StaticInitIndex",
             "Fun-MultipleExtends",
             "Fun-Volatile",
+            "Fun-NDK",
+            "FUN-NDK-SPLIT-MERGE"
     };
 
 
@@ -214,6 +218,12 @@ public class FragmentFactory {
                 break;
             case "Fun-Volatile":
                 f = VolatileFragment.newInstance();
+                break;
+            case "Fun-NDK":
+                f = NDKFragment.newInstance();
+                break;
+            case "FUN-NDK-SPLIT-MERGE":
+                f = SplitsMergeFragment.newInstance();
                 break;
             default:
                 break;

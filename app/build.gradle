@@ -16,6 +16,16 @@ android {
         jackOptions {
             enabled false
         }
+        externalNativeBuild {
+            cmake {
+                //arguments  '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
+                //cppFlags "-std=c++11","-frtti", "-fexceptions"
+                cppFlags ""
+            }
+        }
+        ndk {
+            ldLibs "log"//实现__android_log_print
+        }
     }
 
     buildTypes {
@@ -41,6 +51,12 @@ android {
     dataBinding {
         enabled = true;
     }
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+
 }
 
 dependencies {
