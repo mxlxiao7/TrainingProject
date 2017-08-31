@@ -7,9 +7,11 @@ import java.util.concurrent.CountDownLatch;
 import leon.training.algorithm.Utils;
 
 /**
- * Created by maxiaolong on 2017/2/13.
+ *
+ * 主线任务阻塞等待许多前置条件任务执行完毕，再执行主线任务
+ * 原理:AQS的实现
+ *
  */
-
 public class CountDownLatchDemo {
     final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 

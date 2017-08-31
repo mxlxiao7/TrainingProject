@@ -23,13 +23,12 @@ public class SubTask extends Thread {
 
     public void run() {
         Utils.msg("[并发任务-" + name + "]  开始执行");
-        Log.e("maxiaolong", "[并发任务-" + name + "]  开始执行");
 
         for (int i = 0; i < 5; i++) {    //模拟耗时的任务
-            Utils.msg("[并发任务-" + i + "-" + name + "]  开始执行完毕，通知障碍器");
-            Log.e("maxiaolong", "[并发任务-" + i + "-" + name + "]  开始执行完毕，通知障碍器");
+            Utils.msg("[并发任务-" + i + "-" + name + "] 执行...");
         }
         try {
+            Utils.msg("[并发任务-" + name + "] 通知障碍器");
             //每执行完一项任务就通知障碍器
             cb.await();
         } catch (InterruptedException e) {
@@ -37,5 +36,7 @@ public class SubTask extends Thread {
         } catch (BrokenBarrierException e) {
             e.printStackTrace();
         }
+
+        Utils.msg("[并发任务-" + name + "]  任务完成");
     }
 }

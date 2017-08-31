@@ -8,9 +8,12 @@ import java.util.concurrent.Semaphore;
 import leon.training.algorithm.Utils;
 
 /**
- * Created by maxiaolong on 2017/1/16.
+ *
+ * 控制同时执行任务数量
+ * 原理:AQS的实现
+ *
+ *
  */
-
 public class SemaphoreUtil {
 
     public static void exe() {

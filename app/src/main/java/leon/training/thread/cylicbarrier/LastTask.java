@@ -11,6 +11,5 @@ import leon.training.algorithm.Utils;
 public class LastTask extends Thread {
     public void run() {
         Utils.msg("......终于要执行最后的任务了......");
-        Log.e("maxiaolong", "......终于要执行最后的任务了......");
     }
 }
