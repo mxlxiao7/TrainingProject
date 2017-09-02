@@ -18,13 +18,12 @@ android {
         }
         externalNativeBuild {
             cmake {
-                //arguments  '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
-                //cppFlags "-std=c++11","-frtti", "-fexceptions"
-                cppFlags ""
+                arguments  '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
+                cppFlags "-std=c++11","-frtti", "-fexceptions"
             }
         }
         ndk {
-            ldLibs "log"//实现__android_log_print
+
         }
     }
 
