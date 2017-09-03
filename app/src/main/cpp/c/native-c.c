@@ -55,7 +55,7 @@ JNIEXPORT jstring JNICALL Java_leon_training_ndk_Client_readStringFromJava
     //函数内部复制了，isCopy:JNI_TRUE 没有复制:JNI_FALSE (如果不关心这个可以传NULL)
     char *old = (*env)->GetStringUTFChars(env, jstr, &isCopy);
     char *is_copy = isCopy ? " 复制了 " : " 没有复制 ";
-    showmessage(env, is_copy);
+    showCharMsg(env, is_copy);
 
     //5.修改(super + old)
     char str[50] = {"Handsome "};
@@ -174,7 +174,7 @@ JNIEXPORT void JNICALL Java_leon_training_ndk_Client_invokeMethod
 
     char s[50];
     sprintf(s, "Random Num = %d", random);
-    showmessage(env, s);
+    showCharMsg(env, s);
 }
 
 
@@ -192,7 +192,7 @@ JNIEXPORT void JNICALL Java_leon_training_ndk_Client_invokeStaticMethod
     jstring uuid = (*env)->CallStaticObjectMethod(env, cls, id);
     char s[100];
     sprintf(s, "UUID = %ld", uuid);
-    showmessage(env, s);
+    showCharMsg(env, s);
 }
 
 
@@ -212,8 +212,8 @@ JNIEXPORT void JNICALL Java_leon_training_ndk_Client_invokeConstructMethod
     jmethodID gettime_mid = (*env)->GetMethodID(env, cls, "getTime", "()J");
     jlong time = (*env)->CallLongMethod(env, java_date, gettime_mid);
     char s[100];
-    sprintf(s, "时间戳 = %ld", time);
-    showmessage(env, s);
+    sprintf(s, "时间戳 =uuid_obj %ld", time);
+    showCharMsg(env, s);
 }
 
 /**
@@ -351,7 +351,7 @@ JNIEXPORT void JNICALL Java_leon_training_ndk_Client_globalRef
     //使用
     jclass cls = (*env)->GetObjectClass(env, jobj);
     char *s = (*env)->GetStringUTFChars(env, j_str, NULL);
-    showmessage(env, s);
+    showCharMsg(env, s);
 
     //回收
     (*env)->DeleteGlobalRef(env, glo_str);
@@ -371,7 +371,7 @@ JNIEXPORT void JNICALL Java_leon_training_ndk_Client_globalWeakRef
     //使用
     jclass cls = (*env)->GetObjectClass(env, jobj);
     char *s = (*env)->GetStringUTFChars(env, j_str, NULL);
-    showmessage(env, s);
+    showCharMsg(env, s);
 
     //回收
     (*env)->DeleteWeakGlobalRef(env, weak_glo_str);
@@ -388,7 +388,7 @@ JNIEXPORT void JNICALL Java_leon_training_ndk_Client_exception
     jthrowable exception = (*env)->ExceptionOccurred(env);
     if (exception != NULL) {
         (*env)->ExceptionClear(env);
-        showmessage(env, "C 发现异常并清空");
+        showCharMsg(env, "C 发现异常并清空");
         fid = (*env)->GetFieldID(env, cls, "key", "Ljava/lang/String;");
     }
 
@@ -396,7 +396,7 @@ JNIEXPORT void JNICALL Java_leon_training_ndk_Client_exception
     char *str = (*env)->GetStringUTFChars(env, jstr, NULL);
 
     if (strcasecmp(str, "super jason") != 0) {
-        showmessage(env, "C 抛出异常");
+        showCharMsg(env, "C 抛出异常");
         jclass newExcCls = (*env)->FindClass(env, "java/lang/IllegalArgumentException");
         (*env)->ThrowNew(env, newExcCls, "key's value is invalid!");
     }

@@ -5,5 +5,5 @@
 /**
  * 向手机发送信息
  */
-void showmessage(JNIEnv *, char *);
-
+void showCharMsg(JNIEnv *, char *);
+void showStrMsg(JNIEnv *, jstring);

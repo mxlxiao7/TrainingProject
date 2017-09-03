@@ -38,12 +38,12 @@ JNIEXPORT jint JNICALL Java_leon_training_ndk_splistmerge_Client_splitFile
         //源文件：/src/video.mp4
         //目标文件：/src/video_%d.mp4
         sprintf(patches[i], c_pattern, i);
-        showmessage(env, patches[i]);
+        showCharMsg(env, patches[i]);
     }
 
     FILE *fp = fopen(c_path, "r");
     if (fp == NULL) {
-        showmessage(env, "src fp is null");
+        showCharMsg(env, "src fp is null");
     }
 
     long file_size = get_file_size(c_path);
@@ -129,7 +129,7 @@ JNIEXPORT jint JNICALL Java_leon_training_ndk_splistmerge_Client_mergeFile
         }
 
         fclose(item_fp);
-        showmessage(env, patches[i]);
+        showCharMsg(env, patches[i]);
     }
 
     //释放

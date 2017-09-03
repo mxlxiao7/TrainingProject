@@ -6,6 +6,8 @@ import android.util.Log;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.UUID;
+
 /**
  * Created by maxiaolong on 2016/11/28.
  */
@@ -25,5 +27,9 @@ public class Utils {
 
     public static boolean isMainThread() {
         return Looper.myLooper() == Looper.getMainLooper();
+    }
+
+    public static String createUUID(){
+        return UUID.randomUUID().toString();
     }
 }

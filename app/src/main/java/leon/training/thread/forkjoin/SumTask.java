@@ -1,8 +1,7 @@
-package leon.training.thread.multithread;
+package leon.training.thread.forkjoin;
 
 import java.util.concurrent.RecursiveTask;
 
-import leon.training.algorithm.Logger;
 import leon.training.algorithm.Utils;
 
 /**

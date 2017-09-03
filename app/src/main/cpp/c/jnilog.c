@@ -4,7 +4,7 @@
 
 #include "jnilog.h"
 
-void showmessage(JNIEnv *env, char *s) {
+void showCharMsg(JNIEnv *env, char *s) {
     jclass log_cls = (*env)->FindClass(env, "leon/training/ndk/JniLog");
 
     jmethodID id = (*env)->GetStaticMethodID(env, log_cls, "showMessage", "(Ljava/lang/String;)V");
@@ -12,5 +12,15 @@ void showmessage(JNIEnv *env, char *s) {
         return;
     }
     jstring msg = (*env)->NewStringUTF(env, s);
+    (*env)->CallStaticVoidMethod(env, log_cls, id, msg);
+}
+
+void showStrMsg(JNIEnv *env,jstring msg) {
+    jclass log_cls = (*env)->FindClass(env, "leon/training/ndk/JniLog");
+
+    jmethodID id = (*env)->GetStaticMethodID(env, log_cls, "showMessage", "(Ljava/lang/String;)V");
+    if (id == NULL) {
+        return;
+    }
     (*env)->CallStaticVoidMethod(env, log_cls, id, msg);
 }

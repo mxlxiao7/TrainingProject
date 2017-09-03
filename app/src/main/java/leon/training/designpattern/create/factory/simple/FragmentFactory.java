@@ -42,7 +42,10 @@ import leon.training.ndk.splistmerge.SplitsMergeFragment;
 import leon.training.thread.ThreadFragment;
 import leon.training.function.trycatch.TryCatchFragment;
 import leon.training.function.view.ViewFragment;
-import leon.training.thread.multithread.MultiThreadFragment;
+import leon.training.thread.deadlock.DeadLockFragment;
+import leon.training.thread.forkjoin.ForkJoinTaskFragment;
+import leon.training.thread.jniposix.JniPosixFragment;
+import leon.training.thread.multithread.ThreadPoolFragment;
 
 /**
  * Created by maxiaolong on 2017/4/19.
@@ -61,7 +64,10 @@ public class FragmentFactory {
             "Sort-SortQuick",
             "Groovy",
             "Thread",
-            "MultiThread",
+            "Thread-DeadLock",
+            "Thread-ForkJoinTask",
+            "Thread-ThreadPool",
+            "Thread-JniPosix",
             "Rx",
             "Lambda",
             "Decorator",
@@ -135,8 +141,17 @@ public class FragmentFactory {
             case "Thread":
                 f = ThreadFragment.newInstance();
                 break;
-            case "MultiThread":
-                f = MultiThreadFragment.newInstance();
+            case "Thread-DeadLock":
+                f = DeadLockFragment.newInstance();
+                break;
+            case "Thread-ForkJoinTask":
+                f = ForkJoinTaskFragment.newInstance();
+                break;
+            case "Thread-ThreadPool":
+                f = ThreadPoolFragment.newInstance();
+                break;
+            case "Thread-JniPosix":
+                f = JniPosixFragment.newInstance();
                 break;
             case "Rx":
                 f = RxFragment.newInstance();
