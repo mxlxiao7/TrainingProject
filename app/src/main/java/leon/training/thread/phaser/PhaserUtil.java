@@ -2,7 +2,7 @@ package leon.training.thread.phaser;
 
 import java.util.concurrent.Phaser;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/1/16.

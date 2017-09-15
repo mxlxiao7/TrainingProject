@@ -1,6 +1,6 @@
 package leon.training.designpattern.behavior.templatemethod;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/6/14.

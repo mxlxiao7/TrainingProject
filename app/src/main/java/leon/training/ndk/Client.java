@@ -6,12 +6,7 @@ import java.util.Random;
 import java.util.UUID;
 
 
-import leon.training.algorithm.Creator;
-import leon.training.algorithm.Utils;
-import leon.training.designpattern.behavior.chain.DeptHandler;
-import leon.training.designpattern.behavior.chain.GeneralHandler;
-import leon.training.designpattern.behavior.chain.IHandler;
-import leon.training.designpattern.behavior.chain.ProjectHandler;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/5/25.

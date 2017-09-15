@@ -3,7 +3,7 @@ package leon.training.designpattern.structure.component;
 import java.util.ArrayList;
 import java.util.List;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/5/5.

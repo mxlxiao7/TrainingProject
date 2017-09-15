@@ -3,7 +3,7 @@ package leon.training.function.volatiletest;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by leon on 2017/7/7.

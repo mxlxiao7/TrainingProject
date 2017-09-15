@@ -1,6 +1,6 @@
 package leon.training.thread.termination;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/1/13.

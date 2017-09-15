@@ -14,7 +14,7 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import leon.training.BaseFragment;
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 import leon.trainingproject.R;
 
 /**

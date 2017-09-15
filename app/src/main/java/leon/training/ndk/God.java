@@ -1,6 +1,6 @@
 package leon.training.ndk;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by leon on 2017/8/23.

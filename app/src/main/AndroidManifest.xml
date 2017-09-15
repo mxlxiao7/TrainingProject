@@ -32,9 +32,9 @@
 
         <activity android:name="leon.training.function.touch.TouchActivity" />
 
-        <activity android:name="leon.training.databinding.DataBindingActivity" />
+        <activity android:name="leon.training.function.databinding.DataBindingActivity" />
 
-        <activity android:name="leon.training.databinding.DataBindingListActivity" />
+        <activity android:name="leon.training.function.databinding.DataBindingListActivity" />
 
         <activity android:name="leon.training.function.leaks.LeakActivity" />
 

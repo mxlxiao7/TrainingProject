@@ -4,14 +4,8 @@ package leon.training.ndk.splistmerge;
 import android.os.Environment;
 
 import java.io.File;
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.UUID;
 
-import leon.training.algorithm.Utils;
-import leon.training.ndk.God;
-import leon.training.ndk.Jack;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/5/25.

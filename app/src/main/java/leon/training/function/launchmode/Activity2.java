@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import leon.training.BaseActivity;
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 import leon.trainingproject.R;
 
 /**

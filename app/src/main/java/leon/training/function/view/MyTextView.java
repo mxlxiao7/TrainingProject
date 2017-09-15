@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 import static leon.training.function.view.ViewFragment.i;
 

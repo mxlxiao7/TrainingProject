@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  *

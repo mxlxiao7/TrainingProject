@@ -1,6 +1,6 @@
 package leon.training.designpattern.structure.proxy;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/4/20.

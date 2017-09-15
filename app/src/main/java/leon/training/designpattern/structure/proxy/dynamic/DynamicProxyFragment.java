@@ -17,7 +17,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 import leon.training.BaseFragment;
-import leon.training.algorithm.Utils;
+
+import leon.training.utils.Utils;
 import leon.trainingproject.R;
 import leon.trainingproject.databinding.FragmentDynamicProxyLayoutBinding;
 import retrofit2.http.GET;

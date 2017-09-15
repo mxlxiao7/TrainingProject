@@ -1,6 +1,6 @@
 package leon.training.function.multipleextends;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by leon on 2017/7/7.

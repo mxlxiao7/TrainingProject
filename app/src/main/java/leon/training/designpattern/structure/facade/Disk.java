@@ -1,6 +1,6 @@
 package leon.training.designpattern.structure.facade;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Disk子系统类

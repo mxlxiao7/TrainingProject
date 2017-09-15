@@ -1,8 +1,6 @@
 package leon.training.thread.cylicbarrier;
 
-import android.util.Log;
-
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/1/14.

@@ -1,6 +1,6 @@
 package leon.training.designpattern.structure.adapter;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * 源 （需要被适配的对象）

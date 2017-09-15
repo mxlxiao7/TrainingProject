@@ -1,6 +1,6 @@
 package leon.training.designpattern.create.factory.method;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Author:maxiaolong

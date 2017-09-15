@@ -1,7 +1,4 @@
-package leon.training.datastructure.list;
-
-import java.util.Iterator;
-import java.util.function.Consumer;
+package leon.training.datastructure.imp;
 
 /**
  * Created by leon on 2017/3/19.
@@ -162,47 +159,5 @@ public class MArrayList {
             throw new IndexOutOfBoundsException();
         }
         return items[index];
-    }
-
-
-    /**
-     *  内部迭代器
-     */
-    private class ListIterator implements Iterator{
-
-        private int current = 0;
-
-        @Override
-        public boolean hasNext() {
-            return current < size();
-        }
-
-        @Override
-        public Object next() {
-            return items[current++];
-        }
-
-        @Override
-        public void remove() {
-            MArrayList.this.remove(--current);
-        }
-
-        @Override
-        public void forEachRemaining(Consumer action) {
-
-        }
-    }
-
-
-    /**
-     *
-     */
-    public static void main(){
-
-
-
-
-
-
     }
 }

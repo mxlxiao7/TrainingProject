@@ -1,7 +1,7 @@
 package leon.training.thread.deadlock;
 
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by maxiaolong on 2017/5/25.

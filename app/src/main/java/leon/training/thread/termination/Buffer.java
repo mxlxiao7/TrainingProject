@@ -3,7 +3,7 @@ package leon.training.thread.termination;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 
 /**

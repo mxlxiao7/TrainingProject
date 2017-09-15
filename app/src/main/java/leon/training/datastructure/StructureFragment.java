@@ -12,8 +12,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import leon.training.BaseFragment;
-import leon.training.datastructure.list.MDLinkedList;
-import leon.training.datastructure.list.MSLinkedList;
+import leon.training.datastructure.imp.MDLinkedList;
+import leon.training.datastructure.imp.MSLinkedList;
 import leon.training.thread.cylicbarrier.CylicBarrierUtil;
 import leon.trainingproject.R;
 

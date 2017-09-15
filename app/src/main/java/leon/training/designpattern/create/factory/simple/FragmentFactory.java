@@ -12,8 +12,8 @@ import leon.training.algorithm.SortQuick;
 import leon.training.algorithm.SortSelection;
 import leon.training.algorithm.SortShell;
 import leon.training.algorithm.sortfragment.SortFragment;
-import leon.training.function.broadcast.BroadCastFragment;
 import leon.training.databinding.DataBindingFragment;
+import leon.training.function.broadcast.BroadCastFragment;
 import leon.training.designpattern.behavior.templatemethod.TemplateMethodFragment;
 import leon.training.designpattern.structure.adapter.AdapterFragment;
 import leon.training.designpattern.structure.bridge.BridgeFragment;
@@ -38,6 +38,9 @@ import leon.training.function.network.NetworkFragment;
 import leon.training.function.rx.RxFragment;
 import leon.training.datastructure.StructureFragment;
 import leon.training.ndk.NDKFragment;
+import leon.training.ndk.hotfix.HotFixFragment;
+import leon.training.ndk.opensles.OpenESFragment;
+import leon.training.ndk.patch.PatchFragment;
 import leon.training.ndk.splistmerge.SplitsMergeFragment;
 import leon.training.thread.ThreadFragment;
 import leon.training.function.trycatch.TryCatchFragment;
@@ -96,7 +99,10 @@ public class FragmentFactory {
             "Fun-MultipleExtends",
             "Fun-Volatile",
             "Fun-NDK",
-            "FUN-NDK-SPLIT-MERGE"
+            "FUN-NDK-SPLIT-MERGE",
+            "FUN-NDK-BSDIFF-PATCH",
+            "FUN-NDK-HOTFIX",
+            "FUN-NDK-OPENESPALY"
     };
 
 
@@ -240,6 +246,16 @@ public class FragmentFactory {
             case "FUN-NDK-SPLIT-MERGE":
                 f = SplitsMergeFragment.newInstance();
                 break;
+            case "FUN-NDK-BSDIFF-PATCH":
+                f = PatchFragment.newInstance();
+                break;
+            case "FUN-NDK-HOTFIX":
+                f = HotFixFragment.newInstance();
+                break;
+            case "FUN-NDK-OPENESPALY":
+                f = OpenESFragment.newInstance();
+                break;
+
             default:
                 break;
         }

@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.CountDownLatch;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  *

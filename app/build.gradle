@@ -5,12 +5,12 @@ apply plugin: 'com.android.application'
 //apply plugin: 'groovyx.android'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 26
     buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "leon.trainingproject"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         jackOptions {
@@ -18,8 +18,8 @@ android {
         }
         externalNativeBuild {
             cmake {
-                arguments  '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
-                cppFlags "-std=c++11","-frtti", "-fexceptions"
+//                arguments  '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
+                cppFlags "-frtti", "-fexceptions"
             }
         }
         ndk {

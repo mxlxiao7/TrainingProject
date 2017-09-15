@@ -18,7 +18,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.io.IOException;
 
 import leon.training.BaseFragment;
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 import leon.trainingproject.R;
 import leon.trainingproject.databinding.FragmentNetworkLayoutBinding;
 import okhttp3.Call;

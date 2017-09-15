@@ -1,6 +1,6 @@
 package leon.training.function.trycatch;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by leon on 2017/4/6.

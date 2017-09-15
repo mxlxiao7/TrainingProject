@@ -1,9 +1,6 @@
-package leon.training.datastructure.list;
+package leon.training.datastructure.imp;
 
-import java.util.Iterator;
-import java.util.function.Consumer;
-
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by leon on 2017/3/20.
@@ -339,31 +336,7 @@ public class MDLinkedList {
         }
     }
 
-    /**
-     * 内部迭代器
-     */
-    private class ListIterator implements Iterator {
 
-        @Override
-        public boolean hasNext() {
-            return false;
-        }
-
-        @Override
-        public Object next() {
-            return null;
-        }
-
-        @Override
-        public void remove() {
-
-        }
-
-        @Override
-        public void forEachRemaining(Consumer action) {
-
-        }
-    }
 
 
     /********************************测试 start*********************************/

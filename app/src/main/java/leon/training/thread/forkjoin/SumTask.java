@@ -2,7 +2,7 @@ package leon.training.thread.forkjoin;
 
 import java.util.concurrent.RecursiveTask;
 
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 
 /**
  * Created by leon on 2017/7/11.

@@ -34,7 +34,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 import leon.training.BaseFragment;
-import leon.training.algorithm.Utils;
+import leon.training.utils.Utils;
 import leon.trainingproject.R;
 
 /**
