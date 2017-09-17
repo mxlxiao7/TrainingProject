@@ -12,8 +12,11 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import leon.training.BaseFragment;
+import leon.training.datastructure.imp.MBinaryTree;
 import leon.training.datastructure.imp.MDLinkedList;
+import leon.training.datastructure.imp.MGraph;
 import leon.training.datastructure.imp.MSLinkedList;
+import leon.training.datastructure.imp.MSearchBinaryTree;
 import leon.training.thread.cylicbarrier.CylicBarrierUtil;
 import leon.trainingproject.R;
 
@@ -31,6 +34,8 @@ public class StructureFragment extends BaseFragment {
     private Button mBtn;
     private Button mBtn1;
     private Button mBtn2;
+    private Button mBtn3;
+    private Button mBtn4;
 
     public StructureFragment() {
     }
@@ -89,7 +94,23 @@ public class StructureFragment extends BaseFragment {
         mBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CylicBarrierUtil.doAction();
+                MBinaryTree.main();
+            }
+        });
+
+        mBtn3 = (Button) rootView.findViewById(R.id.btn3);
+        mBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MSearchBinaryTree.main();
+            }
+        });
+
+        mBtn4 = (Button) rootView.findViewById(R.id.btn4);
+        mBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MGraph.main();
             }
         });
 

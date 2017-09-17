@@ -57,6 +57,7 @@ import leon.training.thread.multithread.ThreadPoolFragment;
 public class FragmentFactory {
 
     public static final String[] TITLES = new String[]{
+            "Data-Structure",
             "Sort-Selection",
             "Sort-Insertion",
             "Sort-Shell",
@@ -74,7 +75,6 @@ public class FragmentFactory {
             "Rx",
             "Lambda",
             "Decorator",
-            "Data Structure",
             "Try Catch Condition",
             "DP-MethodFactory",
             "DP-AbstractFactory ",
@@ -168,7 +168,7 @@ public class FragmentFactory {
             case "Decorator":
                 f = DecoratorFragment.newInstance();
                 break;
-            case "Data Structure":
+            case "Data-Structure":
                 f = StructureFragment.newInstance();
                 break;
             case "Try Catch Condition":

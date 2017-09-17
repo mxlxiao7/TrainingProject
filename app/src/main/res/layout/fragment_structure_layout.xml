@@ -36,7 +36,17 @@
             <Button
                 android:id="@+id/btn2"
                 style="@style/btn.style"
-                android:text="数组链表" />
+                android:text="二叉树" />
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/btn.style"
+                android:text="搜索二叉树" />
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/btn.style"
+                android:text="图" />
         </LinearLayout>
     </HorizontalScrollView>
 

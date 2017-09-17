@@ -9,6 +9,11 @@ import android.util.Log;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.UUID;
 
 /**
@@ -50,5 +55,26 @@ public class Utils {
             Log.e("VersionInfo", "Exception", e);
         }
         return versioncode;
+    }
+
+
+    /**
+     * 深拷贝
+     *
+     * @return
+     */
+    public static Object deepClone(Object obj) {
+        Object ret = null;
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(baos);
+            oos.writeObject(obj);
+            ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(bais);
+            ret = ois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ret;
     }
 }
