@@ -1,6 +1,5 @@
 package leon.training.datastructure.imp;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 
 import leon.training.utils.Utils;
@@ -9,16 +8,16 @@ import leon.training.utils.Utils;
  * Created by leon on 2017/9/17.
  */
 
-public class MGraph {
+public class MGraphPrim {
 
-    private static final int MAX_WEIGHT = Integer.MAX_VALUE;
+    private static final int MAX_WEIGHT = 65535;
     private int vertexSize;//顶点数量
     public int[] vertexs;//顶点数组
     public int[][] matrix;
     public boolean[] isVisited;
 
 
-    public MGraph(int vertexSize) {
+    public MGraphPrim(int vertexSize) {
         this.vertexSize = vertexSize;
         matrix = new int[vertexSize][vertexSize];
         vertexs = new int[vertexSize];
@@ -223,7 +222,7 @@ public class MGraph {
     public static void main() {
 
         Utils.msg("\n创建图 ");
-        MGraph graph = new MGraph(9);
+        MGraphPrim graph = new MGraphPrim(9);
         int[] a0 = new int[]{0, 10, MAX_WEIGHT, MAX_WEIGHT, MAX_WEIGHT, 11, MAX_WEIGHT, MAX_WEIGHT, MAX_WEIGHT};
         int[] a1 = new int[]{10, 0, 18, MAX_WEIGHT, MAX_WEIGHT, MAX_WEIGHT, 16, MAX_WEIGHT, 12};
         int[] a2 = new int[]{MAX_WEIGHT, MAX_WEIGHT, 0, 22, MAX_WEIGHT, MAX_WEIGHT, MAX_WEIGHT, MAX_WEIGHT, 8};

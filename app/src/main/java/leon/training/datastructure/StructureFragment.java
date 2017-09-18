@@ -14,10 +14,12 @@ import org.greenrobot.eventbus.ThreadMode;
 import leon.training.BaseFragment;
 import leon.training.datastructure.imp.MBinaryTree;
 import leon.training.datastructure.imp.MDLinkedList;
-import leon.training.datastructure.imp.MGraph;
+import leon.training.datastructure.imp.MGraphDijstra;
+import leon.training.datastructure.imp.MGraphPrim;
+import leon.training.datastructure.imp.MGraphKruskal;
+import leon.training.datastructure.imp.MGraphTopologic;
 import leon.training.datastructure.imp.MSLinkedList;
 import leon.training.datastructure.imp.MSearchBinaryTree;
-import leon.training.thread.cylicbarrier.CylicBarrierUtil;
 import leon.trainingproject.R;
 
 /**
@@ -110,7 +112,10 @@ public class StructureFragment extends BaseFragment {
         mBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MGraph.main();
+                MGraphPrim.main();
+                MGraphKruskal.main();
+                MGraphDijstra.main();
+                MGraphTopologic.main();
             }
         });
 
