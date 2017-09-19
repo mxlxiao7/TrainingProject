@@ -1,22 +1,22 @@
-package leon.training.algorithm;
+package leon.training.algorithm.sortimp;
 
-import java.util.Arrays;
+import leon.training.algorithm.Strategy;
 
 /**
- * 快速排序
- * <p>
+ * 冒泡排序
+ * <p/>
  * Author:maxiaolong
  * Date:2016/11/3
  * Time:13:32
  * Email:mxlxiao7@sina.com
  */
-public class SortQuick implements Strategy {
+public class SortBucket implements Strategy {
 
 
     private String tip =
             "插入排序（Insertion Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。\n" +
                     " \n" +
-                    "时间复杂度：O(nlgn)\n" +
+                    "时间复杂度：Ο(n2)\n" +
                     "\n" +
                     "稳定性:稳定\n" +
                     "\n" +
@@ -30,40 +30,17 @@ public class SortQuick implements Strategy {
                     "\n";
 
     @Override
-    public void sort(int[] data) {
-        if (data == null || data.length < 2) {
-            return;
-        }
-        quickSort(data, 0, data.length - 1);
-    }
-
-    private void quickSort(int[] data, int left, int right) {
-        if (left < right) {
-            int mid = sort(data, left, right);
-            quickSort(data, left, mid - 1);
-            quickSort(data, mid + 1, right);
-        }
-    }
-
-    private int sort(int[] data, int left, int right) {
-        int pivot = data[left];
-        while (left < right) {
-            while (left < right && data[right] >= pivot) {
-                right--;
-            }
-            data[left] = data[right];
-            while (left < right && data[right] <= pivot) {
-                left++;
-            }
-            data[right] = data[left];
-        }
-        data[left] = pivot;
-        return left;
+    public String getTip() {
+        return tip;
     }
 
 
     @Override
-    public String getTip() {
-        return tip;
+    public void sort(int[] data) {
+
+
+
+
+
     }
 }

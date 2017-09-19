@@ -3,15 +3,16 @@ package leon.training.designpattern.create.factory.simple;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
-import leon.training.algorithm.SortBubble;
-import leon.training.algorithm.SortHeap;
-import leon.training.algorithm.SortInsertion;
-import leon.training.algorithm.SortMergeNonRecursive;
-import leon.training.algorithm.SortMergeRecursive;
-import leon.training.algorithm.SortQuick;
-import leon.training.algorithm.SortSelection;
-import leon.training.algorithm.SortShell;
-import leon.training.algorithm.sortfragment.SortFragment;
+import leon.training.algorithm.sortimp.SortBinaryInsert;
+import leon.training.algorithm.sortimp.SortBubble;
+import leon.training.algorithm.sortimp.SortHeap;
+import leon.training.algorithm.sortimp.SortInsert;
+import leon.training.algorithm.sortimp.SortMergeNonRecursive;
+import leon.training.algorithm.sortimp.SortMergeRecursive;
+import leon.training.algorithm.sortimp.SortQuick;
+import leon.training.algorithm.sortimp.SortSelection;
+import leon.training.algorithm.sortimp.SortShell;
+import leon.training.algorithm.SortFragment;
 import leon.training.databinding.DataBindingFragment;
 import leon.training.function.broadcast.BroadCastFragment;
 import leon.training.designpattern.behavior.templatemethod.TemplateMethodFragment;
@@ -57,15 +58,16 @@ import leon.training.thread.multithread.ThreadPoolFragment;
 public class FragmentFactory {
 
     public static final String[] TITLES = new String[]{
-            "Data-Structure",
-            "Sort-Selection",
-            "Sort-Insertion",
-            "Sort-Shell",
             "Sort-Bubble",
+            "Sort-Insertion",
+            "Sort-BinaryInsertion",
+            "Sort-Selection",
+            "Sort-Shell",
             "Sort-MergeRecursive",
             "Sort-MergeNonRecursive",
             "Sort-SortHeap",
             "Sort-SortQuick",
+            "Data-Structure",
             "Groovy",
             "Thread",
             "Thread-DeadLock",
@@ -121,7 +123,10 @@ public class FragmentFactory {
                 f = SortFragment.newInstance(new SortSelection());
                 break;
             case "Sort-Insertion":
-                f = SortFragment.newInstance(new SortInsertion());
+                f = SortFragment.newInstance(new SortInsert());
+                break;
+            case "Sort-BinaryInsertion":
+                f = SortFragment.newInstance(new SortBinaryInsert());
                 break;
             case "Sort-Shell":
                 f = SortFragment.newInstance(new SortShell());

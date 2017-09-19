@@ -1,14 +1,16 @@
-package leon.training.algorithm;
+package leon.training.algorithm.sortimp;
+
+import leon.training.algorithm.Strategy;
 
 /**
- * 冒泡排序
- * <p/>
+ * 选择排序
+ * <p>
  * Author:maxiaolong
  * Date:2016/11/3
  * Time:13:32
  * Email:mxlxiao7@sina.com
  */
-public class SortBucket implements Strategy {
+public class SortSelection implements Strategy {
 
 
     private String tip =
@@ -27,18 +29,36 @@ public class SortBucket implements Strategy {
                     "重复步骤2\n" +
                     "\n";
 
-    @Override
-    public String getTip() {
-        return tip;
-    }
-
 
     @Override
     public void sort(int[] data) {
+        if (data == null || data.length < 2) {
+            return;
+        }
 
+        for (int i = 0; i < data.length; i++) {
+            int tmp = data[i];
+            int index = i;
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[j] < tmp) {
+                    index = j;
+                    tmp = data[j];
+                }
+            }
+            swap(data, i, index);
+        }
+    }
 
+    private static void swap(int[] data, int i, int j) {
+        if (j != i) {
+            int tmp = data[i];
+            data[i] = data[j];
+            data[j] = tmp;
+        }
+    }
 
-
-
+    @Override
+    public String getTip() {
+        return tip;
     }
 }

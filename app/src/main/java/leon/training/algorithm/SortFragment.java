@@ -1,9 +1,6 @@
-package leon.training.algorithm.sortfragment;
+package leon.training.algorithm;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -18,9 +15,6 @@ import android.widget.TextView;
 import java.util.Arrays;
 
 import leon.training.BaseFragment;
-import leon.training.algorithm.Client;
-import leon.training.algorithm.Strategy;
-import leon.training.algorithm.Creator;
 import leon.trainingproject.R;
 
 /**
