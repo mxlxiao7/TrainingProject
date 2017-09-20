@@ -25,6 +25,8 @@ public class TApplication extends Application {
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().build());
         }
         refWatcher = LeakCanary.install(this);
+
+
     }
 
 
@@ -32,5 +34,17 @@ public class TApplication extends Application {
         TApplication application = (TApplication) context.getApplicationContext();
         return application.refWatcher;
     }
+
+
+
+    @Override
+    public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
+        super.registerActivityLifecycleCallbacks(callback);
+
+
+
+    }
+
+
 
 }

@@ -3,6 +3,8 @@ package leon.training.designpattern.create.factory.simple;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
+import leon.training.algorithm.recursion.AlgorithmFragment;
+import leon.training.algorithm.recursion.Gcd;
 import leon.training.algorithm.sortimp.SortBinaryInsert;
 import leon.training.algorithm.sortimp.SortBubble;
 import leon.training.algorithm.sortimp.SortHeap;
@@ -58,6 +60,7 @@ import leon.training.thread.multithread.ThreadPoolFragment;
 public class FragmentFactory {
 
     public static final String[] TITLES = new String[]{
+            "Algorithm",
             "Sort-Bubble",
             "Sort-Insertion",
             "Sort-BinaryInsertion",
@@ -119,6 +122,9 @@ public class FragmentFactory {
         }
         Fragment f = null;
         switch (key) {
+            case "Algorithm":
+                f = AlgorithmFragment.newInstance();
+                break;
             case "Sort-Selection":
                 f = SortFragment.newInstance(new SortSelection());
                 break;

@@ -36,5 +36,7 @@ public class BaseActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     public void emptyEvent(String message) {
         //hook do nothing
+
+
     }
 }
