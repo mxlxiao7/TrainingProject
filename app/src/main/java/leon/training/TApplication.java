@@ -7,6 +7,14 @@ import android.os.StrictMode;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by maxiaolong on 2017/5/25.
  */
@@ -25,8 +33,6 @@ public class TApplication extends Application {
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().build());
         }
         refWatcher = LeakCanary.install(this);
-
-
     }
 
 
