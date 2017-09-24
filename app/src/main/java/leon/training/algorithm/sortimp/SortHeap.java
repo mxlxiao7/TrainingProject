@@ -85,4 +85,6 @@ public class SortHeap implements Strategy {
     public String getTip() {
         return tip;
     }
+
+
 }
