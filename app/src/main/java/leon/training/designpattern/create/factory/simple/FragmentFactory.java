@@ -16,6 +16,7 @@ import leon.training.algorithm.sortimp.SortSelection;
 import leon.training.algorithm.sortimp.SortShell;
 import leon.training.algorithm.SortFragment;
 import leon.training.databinding.DataBindingFragment;
+import leon.training.function.aidl.AidlFragment;
 import leon.training.function.broadcast.BroadCastFragment;
 import leon.training.designpattern.behavior.templatemethod.TemplateMethodFragment;
 import leon.training.designpattern.structure.adapter.AdapterFragment;
@@ -103,11 +104,13 @@ public class FragmentFactory {
             "Fun-StaticInitIndex",
             "Fun-MultipleExtends",
             "Fun-Volatile",
+            "FUN-Aidl",
             "Fun-NDK",
-            "FUN-NDK-SPLIT-MERGE",
-            "FUN-NDK-BSDIFF-PATCH",
-            "FUN-NDK-HOTFIX",
-            "FUN-NDK-OPENESPALY"
+            "FUN-NDK-Split-Merge",
+            "FUN-NDK-Bsdiff-Patch",
+            "FUN-NDK-Hotfix",
+            "FUN-NDK-Openespaly"
+            
     };
 
 
@@ -251,19 +254,22 @@ public class FragmentFactory {
             case "Fun-Volatile":
                 f = VolatileFragment.newInstance();
                 break;
+            case "FUN-Aidl":
+                f = AidlFragment.newInstance();
+                break;
             case "Fun-NDK":
                 f = NDKFragment.newInstance();
                 break;
-            case "FUN-NDK-SPLIT-MERGE":
+            case "FUN-NDK-Split-Merge":
                 f = SplitsMergeFragment.newInstance();
                 break;
-            case "FUN-NDK-BSDIFF-PATCH":
+            case "FUN-NDK-Bsdiff-Patch":
                 f = PatchFragment.newInstance();
                 break;
-            case "FUN-NDK-HOTFIX":
+            case "FUN-NDK-Hotfix":
                 f = HotFixFragment.newInstance();
                 break;
-            case "FUN-NDK-OPENESPALY":
+            case "FUN-NDK-Openespaly":
                 f = OpenESFragment.newInstance();
                 break;
 
