@@ -2,6 +2,7 @@ package leon.training;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.os.StrictMode;
 
 import com.squareup.leakcanary.LeakCanary;
@@ -46,9 +47,6 @@ public class TApplication extends Application {
     @Override
     public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
         super.registerActivityLifecycleCallbacks(callback);
-
-
-
     }
 
 

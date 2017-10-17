@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ import android.widget.TextView;
 
 import leon.training.designpattern.create.factory.simple.FragmentFactory;
 import leon.training.function.touch.TouchActivity;
+import leon.training.utils.Utils;
 import leon.trainingproject.R;
 
 import static leon.training.designpattern.create.factory.simple.FragmentFactory.TITLES;
@@ -69,6 +71,45 @@ public class MainActivity extends BaseActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Log.e("mxl", "MainActivity - onCreate()");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("mxl", "MainActivity - onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("mxl", "MainActivity - onResume()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("mxl", "MainActivity - onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("mxl", "MainActivity - onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("mxl", "MainActivity - onDestroy()");
+    }
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e("mxl", "MainActivity - onRestart()");
     }
 
     /**

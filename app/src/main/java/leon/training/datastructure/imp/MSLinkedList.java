@@ -89,6 +89,11 @@ public class MSLinkedList {
         while (node != null) {
             if (node.value.equals(obj)) {
                 pre.next = node.next;
+                if (pre.value == null) {
+                    root = pre.next;
+                } else {
+                    root = pre;
+                }
                 size--;
                 modCount++;
                 return 1;
@@ -259,8 +264,6 @@ public class MSLinkedList {
             this.next = next;
         }
     }
-
-
 
 
     /********************************测试 start*********************************/
