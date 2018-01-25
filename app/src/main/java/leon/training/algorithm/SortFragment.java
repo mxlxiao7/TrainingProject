@@ -1,5 +1,6 @@
 package leon.training.algorithm;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -23,6 +24,7 @@ import leon.trainingproject.R;
  * Time:17:00
  * Email:mxlxiao7@sina.com
  */
+@SuppressLint("ValidFragment")
 public class SortFragment extends BaseFragment implements View.OnClickListener {
 
 
@@ -43,6 +45,10 @@ public class SortFragment extends BaseFragment implements View.OnClickListener {
     public static SortFragment newInstance(Strategy s) {
         SortFragment fragment = new SortFragment(s);
         return fragment;
+    }
+
+    public SortFragment() {
+
     }
 
     public SortFragment(Strategy s) {
