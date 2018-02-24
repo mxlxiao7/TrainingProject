@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -76,38 +76,38 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         Log.e("mxl", "MainActivity - onStart()");
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         Log.e("mxl", "MainActivity - onResume()");
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         Log.e("mxl", "MainActivity - onPause()");
     }
 
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         Log.e("mxl", "MainActivity - onStop()");
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         Log.e("mxl", "MainActivity - onDestroy()");
     }
 
 
     @Override
-    protected void onRestart() {
+    public void onRestart() {
         super.onRestart();
         Log.e("mxl", "MainActivity - onRestart()");
     }

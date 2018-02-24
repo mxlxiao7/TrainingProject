@@ -17,7 +17,7 @@ public class Activity3 extends BaseActivity implements View.OnClickListener {
     private Button btn_open1, btn_open2, btn_open3;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c);
         setTitle("Activity3");
@@ -32,7 +32,7 @@ public class Activity3 extends BaseActivity implements View.OnClickListener {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         Utils.msg("Activity3 onDestroy()");
     }

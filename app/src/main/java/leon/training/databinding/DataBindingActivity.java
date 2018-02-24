@@ -36,7 +36,7 @@ public class DataBindingActivity extends BaseActivity implements EventCallback {
     private ObservableArrayMap<String, String> mAnimalMap;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(DataBindingActivity.this, R.layout.activity_databinding);
         binding.tagTV.setOnClickListener(new View.OnClickListener() {

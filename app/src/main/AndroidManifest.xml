@@ -36,6 +36,8 @@
             android:name="leon.training.function.launchmode.Activity2"
             android:launchMode="singleInstance" />
         <activity android:name="leon.training.function.launchmode.Activity3" />
+        <activity android:name="leon.training.designpattern.mvp.MVPActivity" />
+
 
         <receiver
             android:name="leon.training.function.broadcast.DisableReceiver"

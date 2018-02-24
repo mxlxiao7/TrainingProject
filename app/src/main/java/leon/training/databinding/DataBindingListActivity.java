@@ -33,7 +33,7 @@ public class DataBindingListActivity extends BaseActivity {
     private int i = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(DataBindingListActivity.this, R.layout.activity_rv_databinding);
         binding.change.setOnClickListener(new View.OnClickListener() {
