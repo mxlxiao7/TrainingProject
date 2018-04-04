@@ -32,7 +32,18 @@
                 <Button
                     android:id="@+id/btn"
                     style="@style/btn.style"
-                    android:text="动态代理" />
+                    android:text="动态代理-Java(接口)" />
+
+                <Button
+                    android:id="@+id/btn1"
+                    style="@style/btn.style"
+                    android:text="动态代理-CGlib(实际类)" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    style="@style/btn.style"
+                    android:text="动态代理-aspectJ" />
+
             </LinearLayout>
         </HorizontalScrollView>
 

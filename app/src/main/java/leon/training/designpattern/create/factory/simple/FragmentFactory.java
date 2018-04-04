@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
 import leon.training.algorithm.recursion.AlgorithmFragment;
-import leon.training.algorithm.recursion.Gcd;
 import leon.training.algorithm.sortimp.SortBinaryInsert;
 import leon.training.algorithm.sortimp.SortBubble;
 import leon.training.algorithm.sortimp.SortHeap;
@@ -29,7 +28,7 @@ import leon.training.designpattern.structure.facade.FacadeFragment;
 import leon.training.designpattern.create.factory.abs.AbstractFactoryFragment;
 import leon.training.designpattern.create.factory.method.MethodFactoryFragment;
 import leon.training.designpattern.structure.proxy.ProxyFragment;
-import leon.training.designpattern.structure.proxy.dynamic.DynamicProxyFragment;
+import leon.training.designpattern.aop.dynamic.DynamicProxyFragment;
 import leon.training.function.init.StaticInitIndexFragment;
 import leon.training.function.multipleextends.MultipleExtendsFragment;
 import leon.training.function.volatiletest.VolatileFragment;
