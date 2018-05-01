@@ -4,9 +4,8 @@ package leon.training.designpattern.structure.facade;
 import leon.training.utils.Utils;
 
 /**
- * Created by maxiaolong on 2017/4/24.
+ * Client 只能访问到 Façade 中提供的数据是门面设计模式的关键
  */
-
 class Client {
 
     public static void main() {
